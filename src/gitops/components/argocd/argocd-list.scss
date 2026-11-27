@@ -1,0 +1,29 @@
+// Content wrapping only — column widths come from DataView resize handles.
+.gitops-argocd-list .pf-v6-c-table tbody td[data-label='Name'],
+.gitops-argocd-list .pf-v6-c-table tbody td[data-label='Namespace'] {
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  a,
+  .co-resource-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+  }
+}
+
+.gitops-argocd-list .pf-v6-c-table tbody td[data-label='Description'] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gitops-argocd-list__timestamp {
+  white-space: nowrap;
+}
+
+.gitops-argocd-list__actions {
+  text-align: right;
+}

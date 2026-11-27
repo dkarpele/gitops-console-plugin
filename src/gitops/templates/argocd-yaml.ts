@@ -1,0 +1,10 @@
+export const defaultArgoCDYamlTemplate = `
+apiVersion: "argoproj.io/v1beta1"
+kind: "ArgoCD"
+metadata:
+  name: "argocd"
+spec:
+  server:
+    route:
+      enabled: true
+`;

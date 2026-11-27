@@ -1,3 +1,5 @@
+import {modelToRef} from "@gitops/utils/utils";
+
 import type {
   K8sModel,
   K8sResourceCommon,
@@ -27,6 +29,7 @@ export type ArgoCDKind = K8sResourceCommon & {
 };
 
 export type ArgoCDSpec = {
+  version?: string;
   server?: {
     autoscale?: {
       enabled?: boolean;
@@ -79,3 +82,5 @@ export type ArgoCDStatus = {
   phase: string;
   redis: string;
 };
+
+export const argoCDModelRef = modelToRef(ArgoCDModel);

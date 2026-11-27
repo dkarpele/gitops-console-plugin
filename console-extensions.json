@@ -369,6 +369,20 @@
   {
     "type": "console.navigation/resource-ns",
     "properties": {
+      "id": "argocd",
+      "name": "ArgoCD Instances",
+      "perspective": "admin",
+      "section": "gitops-navigation-section",
+      "model": {
+        "group": "argoproj.io",
+        "kind": "ArgoCD",
+        "version": "v1beta1"
+      }
+    }
+  },
+  {
+    "type": "console.navigation/resource-ns",
+    "properties": {
         "id": "application",
         "name": "Applications",
         "perspective": "admin",
@@ -448,6 +462,42 @@
             "kind": "Rollout",
             "version": "v1alpha1"
         }
+    }
+  },
+  {
+    "type": "console.page/resource/list",
+    "flags": {
+      "required": [
+        "ARGOCD"
+      ]
+    },
+    "properties": {
+      "model": {
+        "group": "argoproj.io",
+        "kind": "ArgoCD",
+        "version": "v1beta1"
+      },
+      "component": {
+        "$codeRef": "ArgoCDList"
+      }
+    }
+  },
+  {
+    "type": "console.page/resource/details",
+    "flags": {
+      "required": [
+        "ARGOCD"
+      ]
+    },
+    "properties": {
+      "model": {
+        "group": "argoproj.io",
+        "kind": "ArgoCD",
+        "version": "v1beta1"
+      },
+      "component": {
+        "$codeRef": "ArgoCDDetails"
+      }
     }
   },
   {
@@ -574,6 +624,25 @@
         "component": {
             "$codeRef": "ApplicationSetList"
         }
+    }
+  },
+  {
+    "type": "console.yaml-template",
+    "flags": {
+      "required": [
+        "ARGOCD"
+      ]
+    },
+    "properties": {
+      "name": "default",
+      "model": {
+        "group": "argoproj.io",
+        "kind": "ArgoCD",
+        "version": "v1beta1"
+      },
+      "template": {
+        "$codeRef": "yamlTemplates.defaultArgoCDYamlTemplate"
+      }
     }
   },
   {

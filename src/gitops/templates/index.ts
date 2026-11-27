@@ -1,3 +1,4 @@
+export * from './argocd-yaml';
 export * from './application-yaml';
 export * from './applicationset-yaml';
 export * from './appproject-yaml';
